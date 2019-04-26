@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+
+  "rules": {
+      "no-undef": "off",
+      "no-restricted-globals": "off",
+      "react/jsx-no-undef": "off"
+  }
+}
