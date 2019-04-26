@@ -1,11 +1,11 @@
-##简介
+## 简介
 1. 通过create-react-app初始化项目，配合webpack+mobx搭建完整react开发项目，拥有数据持久化功能
 1. 基于axios封装请求方法request。[axios](https://github.com/axios/axios)
 1. 引入antd 、 antd-mobile ，按需加载模块中的子模块，通过`./.babelrc`文件开启配置
 1. 在最外层拥有一个主组件RootPage，其他子组件都当成子类去引入，实现一个root管理全局组件store的思路，并且所有页面都能拥有访问到该store
 1. 如果不需要该RootPage组件，也可以单独去掉，在根目录下`router.js`文件去掉组件标签
 
-##项目介绍
+## 项目介绍
 
 在`utils/store.js`中创建一个类，去管理mobx数据处理，并将每个store都挂载在Store.stores上面
 如果不需要挂载在window当成全局，可在store文件中修改。之后需要运用到其他stores可通过import去调用
@@ -53,28 +53,28 @@ stores.a.aEvent(data);
 ```
 
 
-##webpack配置
+## webpack配置
 [webpack参考文档:https://www.webpackjs.com/concepts/](https://www.webpackjs.com/concepts/)
 
 
-##src目录介绍
+## src目录介绍
 
-###assets  
+### assets  
 其他静态资源存放，如需要引用的js
 
-###images
+### images
 图片资源存放
 
-###styles
+### styles
 样式文件存放
 
-###templates
+### templates
 对应的components和containers的模板文件，可暂时手动复制修改，后期实现用命令行操作模板文件创建
 
-###utils
+### utils
 公共类
 
-###components
+### components
 1. BaseComponents:基础组件
 ```
 index.js 
@@ -89,25 +89,26 @@ store.js
 可以运用stores.xxx访问到当前加载的所有store。具体看回标签`项目介绍`
 
 
-###containers
+### containers
 页面模块，可以理解为router中对应路由加载的组件的文件夹目录。
 文件格式与BusinessComponents基本相似。
 如果具体页面需要再细致区分，可创建文件夹区分，类似components。
 
 
 
-##本地开发
-`npm install`,`npm start`
+## 本地开发
+`clone`->`npm install`->`npm start`。
 如果需要，可在package.json文件添加反向代理proxy。
-eg: "proxy": {
+```
+"proxy": {
     "/api": {
       "target": "http://fan0417.com",
       "changeOrigin": true,
       "ws": true
     }
   }
-
-##项目打包
+```
+## 项目打包
 npm run build
 
 
