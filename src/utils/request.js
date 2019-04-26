@@ -1,5 +1,4 @@
 import axios from 'axios'
-import constant from './constant';
 
 const fetch = (options) => {
     let {
@@ -15,13 +14,7 @@ const fetch = (options) => {
         }
     }
 
-    if (!config.headers) {
-        config.headers = {}
-    }
-
-    if (utils.getCookie('sessionId') && config.headers['x-shinemi-auth'] === undefined) {
-        config.headers['x-shinemi-auth'] = utils.getCookie('sessionId')
-    }
+    //通用请求参数可在此修改
 
     switch (method.toLowerCase()) {
         case 'get':
@@ -65,12 +58,6 @@ export default function request(options) {
         }
 
     }).catch((error) => {
-        if (error.code === constant.USER_NOT_LOGIN) {
-            utils.delCookie('sessionId', '');
-            localStorage.removeItem('userInfo');
-            localStorage.removeItem('artworkType');
-        }
-
         console.error(error);
 
         return Promise.reject(error);

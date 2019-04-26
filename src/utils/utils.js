@@ -1,6 +1,5 @@
 //公共方法类
 export default {
-
     setCookie: (c_name, value, expiredays) => {
         if (!value) {
             return;

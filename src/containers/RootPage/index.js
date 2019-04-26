@@ -37,7 +37,6 @@ export default class RootPage extends Component {
     return (
       <div>
         This is RootPage All Store Here
-        <img src={require('images/logo.png')} alt=""/>
         {this.state.loadChildren && this.props.children}
       </div>
     )

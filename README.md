@@ -1,6 +1,6 @@
 ##简介
 1. 通过create-react-app初始化项目，配合webpack+mobx搭建完整react开发项目，拥有数据持久化功能
-1. 基于axios封装请求方法request。
+1. 基于axios封装请求方法request。[axios](https://github.com/axios/axios)
 1. 引入antd 、 antd-mobile ，按需加载模块中的子模块，通过`./.babelrc`文件开启配置
 1. 在最外层拥有一个主组件RootPage，其他子组件都当成子类去引入，实现一个root管理全局组件store的思路，并且所有页面都能拥有访问到该store
 1. 如果不需要该RootPage组件，也可以单独去掉，在根目录下`router.js`文件去掉组件标签
