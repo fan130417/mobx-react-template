@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import { withRouter } from "react-router";
 import Store from './store';
 import classnames from 'classnames';
+import './index.less';
 
 @withRouter
 @observer
